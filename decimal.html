@@ -1,0 +1,50 @@
+<h>"DECIMAL MODE" </h>
+<FORM name="mycalc">
+<input name="mydisp" type="Text" size=10 id="calculate"  > <br>
+<input type="Button" value="7" onclick="digitKey(7)">
+<input type="Button" value="8" onclick="digitKey(8)">
+<input type="Button" value="9" onclick="digitKey(9)">
+<input type="Button" value="X" onclick="digitKey('X')"> <br>
+<input type="Button" value="4" onclick="digitKey(4)">
+<input type="Button" value="5" onclick="digitKey(5)">
+<input type="Button" value="6" onclick="digitKey(6)">
+<input type="Button" value="/" onclick="digitKey('/')"> <br>
+<input type="Button" value="1" onclick="digitKey(1)">
+<input type="Button" value="2" onclick="digitKey(2)">
+<input type="Button" value="3" onclick="digitKey(3)">
+<input type="Button" value="-" onclick="digitKey('-')"> <br>
+<input type="Button" value="0" onclick="digitKey(0)">
+<input type="Button" value="=" onclick="result('=')">
+<input type="Button" value="." onclick="digitKey('.')"  >
+<input type="Button" value="+" onclick="digitKey('+')">
+
+</FORM>
+<script> 
+function display(a) { document.forms['mycalc']['mydisp'].value+=a; }
+
+function apply (a,op,n) {
+  switch (op) {
+      case "+": return a += n; 
+      case "-": return a -= n;
+      case "X": return a *= n;
+      case "/": return a /= n;
+      
+    } 
+}
+
+           
+function digitKey (key) {
+     num = key; 
+     display(num);
+  } 
+   
+function result(key)
+{
+  x = document.getElementById("calculate").value
+  y = eval(x)
+  document.getElementById("calculate").value = y
+}
+
+ 
+
+</script>
